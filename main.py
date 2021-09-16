@@ -13,7 +13,7 @@ def helloWorld():
 
 # [START dialogflow_detect_intent_text]
 @app.route('/detect/intent/text/<project_id>/<session_id>/<text>/<language_code>')
-def detect_intent_text(project_id='one-ghq-gcp-study', session_id='fb2e77d47a047kk00504cb3ab4a1f626d174d2d', text='', language_code='en'):
+def detect_intent_text(project_id, session_id, text, language_code):
     """Returns the result of detect intent with texts as inputs.
     Using the same `session_id` between requests allows continuation
     of the conversation."""
