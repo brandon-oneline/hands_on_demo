@@ -12,8 +12,8 @@ def helloWorld():
 
 
 # [START dialogflow_detect_intent_text]
-@app.route('/detect/intent/texts/<project_id>/<session_id>/<text>/<language_code>')
-def detect_intent_texts(project_id='one-ghq-gcp-study', session_id='fb2e77d47a047kk00504cb3ab4a1f626d174d2d', text='', language_code='en'):
+@app.route('/detect/intent/text/<project_id>/<session_id>/<text>/<language_code>')
+def detect_intent_text(project_id='one-ghq-gcp-study', session_id='fb2e77d47a047kk00504cb3ab4a1f626d174d2d', text='', language_code='en'):
     """Returns the result of detect intent with texts as inputs.
     Using the same `session_id` between requests allows continuation
     of the conversation."""
@@ -22,10 +22,6 @@ def detect_intent_texts(project_id='one-ghq-gcp-study', session_id='fb2e77d47a04
 
     session = session_client.session_path(project_id, session_id)
     logging.warning("Session path: {}\n".format(session))
-
-    fulfillment_text = ''
-
-    #for text in texts:
     
     text_input = dialogflow.TextInput(text=text, language_code=language_code)
     query_input = dialogflow.QueryInput(text=text_input)
